@@ -1,3 +1,10 @@
+::-moz-selection{
+    background: #c7e274;
+}
+
+::selection{
+    background-color:#c7e274;
+}
 body{
         font-family: 'Armata', sans-serif;
         color: #757575;
@@ -9,7 +16,8 @@ p{
 h2{
     color: #c7e274;
 }
-.registerAndLogin{
+
+.registerAndLoginBtn{
     height: 40px;
     width: 100px;
     font-size: 12px;
@@ -19,15 +27,55 @@ h2{
     color: #757575;
     font-family: 'Armata', sans-serif;
 }
+.registerAndLoginBtn:active {
+    background-color: #c7e274;
+}
+
 #registerDescr{
     font-size: 12px;
     width: 95%;
     text-align: right;
     padding-left: 110px;
 }
-.registerAndLoginBtns{
+.registerAndLoginBtnPos{
     width: 90%;
     text-align: right;
+}
+
+.checklistTitle{
+    width: 50%;
+    text-align: center;
+}
+
+.listy {
+    width: 400px;
+    height: 255px;
+    position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+     animation-iteration-count: 3;
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    animation-direction: alternate;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:0px;}
+    50%  {left:200px; top:200px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {right:0px; bottom:0px;}
+    25%  {right:200px; bottom:0px;}
+    50%  {right:200px; bottom:150px;}
+    75%  {right:0px; bottom:150px;}
+    100% {right:0px; bottom:0px;}
 }
 
 form {
