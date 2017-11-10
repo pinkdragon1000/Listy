@@ -1,0 +1,79 @@
+<html>
+<head>
+ <!-- Load JQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+<!-- Main CSS file -->
+        <link rel="stylesheet" href="css/main.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<title>Listy </title>
+
+<style>
+body{
+        font-family: 'Armata', sans-serif;
+        color: #757575;
+}
+
+
+.listButton{
+    width: 700px;
+    height: 40px;
+    font-size: 12px;
+    background-color: #ffffff;
+    -webkit-appearance: none;
+    border: 1px dashed #757575;
+    color: #757575;
+    font-family: 'Armata', sans-serif
+}
+.listButton:active{
+     background-color: #c7e274;
+}
+
+</style>
+<script>
+$(function() {
+    var numLists=1;
+    $(".registerAndLoginBtn").click(function(){
+        document.getElementById("output").innerHTML+="<td><a href='#'><button type='button' class='listButton'> List " + numLists+ "</button></a></td>";
+        numLists++;
+   });
+});
+</script>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-sm-3">
+    <img src="images/listy.png" height="130px" width="261px">
+    </div>
+
+    <div class="col-sm-6">
+        <br>
+    <center>
+    <p>Checklists Shared with Me</p>
+    </center>
+    </div>
+    <div style="align-content: right">
+    <div class="col-sm-3" style='text-content="right"'>
+    <button class="registerAndLoginBtn">+ Add List</button>
+    </div>
+    </div>
+</div>
+
+<br>
+
+<center>
+   
+<table>
+<tr>
+  <div id="output"></div>
+</tr>
+</table>
+</center>
+
+</body>
+
+</html>

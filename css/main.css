@@ -210,3 +210,8 @@ span.psw {
     font-family: 'Armata', sans-serif;
     margin-right: 60px;
 }
+
+.checklists:active{
+    background-color: #c7e274;
+}
+
