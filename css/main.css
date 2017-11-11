@@ -1,4 +1,5 @@
 /* common */
+
     ::-moz-selection{
         background: #c7e274;
     }
@@ -188,7 +189,7 @@
         background-color: #c7e274;
     }
 
-/*yourchecklists.html and checklistsshared.html*/
+/*yourchecklists.html, checklistsshared.html,*/
 
     .listButton{
         width: 700px;
