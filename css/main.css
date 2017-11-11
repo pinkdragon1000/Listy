@@ -17,6 +17,29 @@
     h2{
         color: #c7e274;
     }
+    form {
+    width: 550px;
+    height: 600px;
+    margin: 40px;
+    position: relative;
+    background-color: white;
+    }
+    label {
+        font-size: 15px;
+    }
+
+        /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        color: #757575;
+        font-weight: bold;
+        font-size: 15px;
+    }
 
 /* index.html*/
     .registerAndLoginBtn{
@@ -137,18 +160,7 @@
 
 
 
-    /* Full-width input fields */
-    input[type=text], input[type=password] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        color: #757575;
-        font-weight: bold;
-        font-size: 15px;
-    }
+
 
 
 .checklistTitle{
@@ -156,30 +168,39 @@
     text-align: center;
 }
 
-form {
-   width: 550px;
-   height: 600px;
-   margin: 40px;
-   position: relative;
-   background-color: white;
- }
-label {
-    font-size: 15px;
-}
 
-.checklists{
-    height: 40px;
-    width: 245px;
-    font-size: 12px;
-    background-color: #ffffff;
-    -webkit-appearance: none;
-    border: 3px solid #c7e274;
-    color: #757575;
-    font-family: 'Armata', sans-serif;
-    margin-right: 60px;
-}
 
-.checklists:active{
-    background-color: #c7e274;
-}
+/*main.html*/
+
+    .checklistsBtn{
+        height: 40px;
+        width: 245px;
+        font-size: 12px;
+        background-color: #ffffff;
+        -webkit-appearance: none;
+        border: 3px solid #c7e274;
+        color: #757575;
+        font-family: 'Armata', sans-serif;
+        margin-right: 60px;
+    }
+
+    .checklistsBtn:active{
+        background-color: #c7e274;
+    }
+
+/*yourchecklists.html and checklistsshared.html*/
+
+    .listButton{
+        width: 700px;
+        height: 40px;
+        font-size: 12px;
+        background-color: #ffffff;
+        -webkit-appearance: none;
+        border: 1px dashed #757575;
+        color: #757575;
+        font-family: 'Armata', sans-serif
+    }
+    .listButton:active{
+        background-color: #c7e274;
+    }
 
