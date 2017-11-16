@@ -18,7 +18,7 @@
     <script>
         $(function() {
             var numLists=1;
-            $(".registerAndLoginBtn").click(function(){
+            $(".checklistsBtn").click(function(){
                 document.getElementById("output").innerHTML+="<td><a href='listshared.html'><button type='button' class='listButton'> List " + numLists+ "</button></a></td>";
                 numLists++;
             });
@@ -27,24 +27,29 @@
 </head>
 
 <body>
+
     <div class="row">
         <div class="col-sm-3">
-            <img src="../images/listy.png" height="130px" width="261px">
+        <img src="../images/listy.png" height="150px" width="261px">
         </div>
 
+        <div class="container">
         <div class="col-sm-6">
+
             <br>
             <center>
                 <p>Checklists Shared with Me</p>
+                
             </center>
+        
         </div>
 
-        <div style="align-content: right">
-            <div class="col-sm-3" style='text-content="right"'>
-                <button class="registerAndLoginBtn">+ Add List</button>
-                <br>
-            </div>
+        <div class="col-sm-3">
+            <button class="checklistsBtn">+ Add List</button>
         </div>
+
+    </div>
+    </div>
     </div>
 
     <center>
@@ -54,6 +59,7 @@
             </tr>
         </table>
     </center>
+
 
 </body>
 </html>
