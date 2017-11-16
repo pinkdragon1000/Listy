@@ -1,0 +1,64 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+
+    <title>Listy | The Collaborative List Master</title>
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+</style>
+
+<script>
+function addListItem(){
+  var numLists=1;
+  document.getElementById('List-Item').innerHTML += '<div class="input-group">\n<span class="input-group-addon">\n<input type="checkbox" aria-label="Checkbox for following text input">\n</span>\n<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">\n</div>';
+}
+</script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-3">
+          <img class="icon" src="../images/listy.png" alt="Listy Icon">
+        </div>
+
+        <div class="col-6">
+          <div class="container">
+
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon3"> Listlet Author</span>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List 1">
+            </div>
+
+            <center>
+            <button type="button" onclick="addListItem()" class="checklistsBtn"> + Add Item</button>
+            <button type="button" class="checklistsBtn"> Save </button>
+            </center>
+
+            <div id="List-Item">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+                </span>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    </div>
+    </div>
+  
+
+</body></html>
