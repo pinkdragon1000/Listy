@@ -58,8 +58,32 @@ function addListItem(){
         </div>
 
         <div class="col-3">
-          <button type="button" class="shareBtn"> Share </button>
+          
+          <button type="button" class="shareBtn"  onclick="document.getElementById('shareModal').style.display='block'"> Share </button>
           <br><br>
+           <div id="shareModal" class="modal">
+            <center>
+                <form class="modalContent animate" onsubmit="return false;" method="post" id="shareModal" >
+                   <div>
+                        <span onclick="document.getElementById('shareModal').style.display='none'" class="close" title="Close">&times;</span>
+                    </div>
+
+                    <div class="container">
+                        <ul class="ErrorMessages" id="ErrorMessages"></ul>
+                        <h2> Share </h2>
+                        <hr>
+                        <div>
+                            <label for="email">Username: </label>
+                            <input type="text" id="username" required>
+                        </div>
+
+                        <br><br>
+                        <button type="submit" class="checklistsBtn">Share List!</button>
+                    </div>
+
+                </form>
+            </center>
+        </div>   
           <button type="button" class="deleteBtn "> Delete </button>
         </div>
 

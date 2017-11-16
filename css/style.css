@@ -105,3 +105,68 @@ button.pull-right {
         border-radius: 5px;
     }
 
+ form {
+    width: 550px;
+    height: 600px;
+    margin: 40px;
+    position: relative;
+    background-color: white;
+    }
+
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1050; /* Sit on top */
+        left: 1;
+        top: 1;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: hidden; /* Enable scroll if needed */
+        padding-top: 60px;
+        background-color: rgba( 0, 0, 0, 0.8 );
+    }
+
+     /* Modal Content/Box */
+        .modalContent {
+        border: 1px solid #888;
+        width: 600px;
+        height: 300px;
+        }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: lightgrey;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #B94A48;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation to Login and Registration Modals */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+        
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+
+
+
