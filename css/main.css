@@ -8,7 +8,7 @@
         background-color:#c7e274;
     }
     body{
-            font-family: 'Armata', sans-serif;
+            font-family: 'Armata', sans-serif !important;
             color: #757575;
     }
     p{
@@ -51,7 +51,6 @@
         -webkit-appearance: none;
         border: 3px solid #c7e274;
         color: #757575;
-        font-family: 'Armata', sans-serif;
     }
     .registerAndLoginBtn:active {
         background-color: #c7e274;
@@ -181,7 +180,6 @@
         -webkit-appearance: none;
         border: 3px solid #c7e274;
         color: #757575;
-        font-family: 'Armata', sans-serif;
         margin-right: 60px;
     }
 
@@ -199,9 +197,9 @@
         -webkit-appearance: none;
         border: 1px dashed #757575;
         color: #757575;
-        font-family: 'Armata', sans-serif
     }
     .listButton:active{
         background-color: #c7e274;
     }
+    
 
