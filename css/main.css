@@ -168,11 +168,19 @@
     text-align: center;
 }
 
-
+button:focus {
+ outline:0;
+}
+button{
+    font-family: 'Armata', sans-serif !important;
+}
 
 /*main.html*/
+      div.container {
+    margin-top: 20px;
+}
 
-    .checklistsBtn{
+       .checklistsBtn{
         height: 40px;
         width: 245px;
         font-size: 12px;
@@ -180,12 +188,16 @@
         -webkit-appearance: none;
         border: 3px solid #c7e274;
         color: #757575;
-        margin-right: 60px;
+    }
+
+    .checklistsBtn:hover{
+        border: 3px dashed #c7e274;
     }
 
     .checklistsBtn:active{
-        background-color: #c7e274;
+        background-color: #c7e2746b;
     }
+
 
 /*yourchecklists.html, checklistsshared.html,*/
 

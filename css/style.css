@@ -25,6 +25,7 @@
     position: relative;
     background-color: white;
     }
+
     label {
         font-size: 15px;
     }
@@ -51,11 +52,9 @@ div.input-group {
   margin-top: 15px;
 }
 
-button.pull-right {
-  float: right;
+button:focus {
+ outline:0;
 }
-
-
     .checklistsBtn{
         height: 40px;
         width: 245px;
@@ -65,12 +64,14 @@ button.pull-right {
         border: 3px solid #c7e274;
         color: #757575;
         margin-right: 60px;
-        border-radius: 5px;
+    }
+
+    .checklistsBtn:hover{
+        border: 3px dashed #c7e274;
     }
 
     .checklistsBtn:active{
-        background-color: #c7e274;
-        border-radius: 5px;
+        background-color: #c7e2746b;
     }
 
       .deleteBtn{
@@ -81,12 +82,14 @@ button.pull-right {
         -webkit-appearance: none;
         border: 3px solid #ce7464;
         color: #757575;
-        border-radius: 5px;
+    }
+
+    .deleteBtn:hover{
+        border: 3px dashed #ce7464;
     }
 
     .deleteBtn:active{
-        background-color: #ce7464;
-        border-radius: 5px;
+        background-color: #ce746454;
     }
 
        .shareBtn{
@@ -97,12 +100,14 @@ button.pull-right {
         -webkit-appearance: none;
         border: 3px solid powderblue;
         color: #757575;
-        border-radius: 5px;
+    }
+
+    .shareBtn:hover{
+        border: 3px dashed powderblue;
     }
 
     .shareBtn:active{
-        background-color: powderblue;
-        border-radius: 5px;
+        background-color: #b0e0e66b;
     }
 
  form {
