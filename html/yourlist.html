@@ -18,14 +18,12 @@ function addListItem(){
   var numLists=1;
   document.getElementById('List-Item').innerHTML += '<div class="input-group">\n<span class="input-group-addon">\n<input type="checkbox" aria-label="Checkbox for following text input">\n</span>\n<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">\n</div>';
 }
-function deleteAlert() {
-    if (window.confirm("Are you sure you want to delete this list?"))
-    {
+function deleteAlert(){
+    if (window.confirm("Are you sure you want to delete this list?")){
         window.location = "yourchecklists.html";
     }
-    else
-    {
-        // They clicked no
+    else{
+
     }
 }
 </script>
