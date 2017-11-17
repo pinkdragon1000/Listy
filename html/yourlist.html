@@ -14,9 +14,10 @@
 </style>
 
 <script>
+var numItems=2;
 function addListItem(){
-  var numLists=1;
   document.getElementById('List-Item').innerHTML += '<div class="input-group">\n<span class="input-group-addon">\n<input type="checkbox" aria-label="Checkbox for following text input">\n</span>\n<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">\n</div>';
+  numItems++;
 }
 function deleteAlert(){
     if (window.confirm("Are you sure you want to delete this list?")){
@@ -34,40 +35,9 @@ function deleteAlert(){
 
         <div class="col-3">
           <img class="icon" src="../images/listy.png" alt="Listy Icon">
-        </div>
-
-        <div class="col-6">
-          <div class="container">
-
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon3"> Listlet Author</span>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-            </div>
-
-            <div class="input-group">
-              <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List 1">
-            </div>
-
-            <center>
-            <button type="button" onclick="addListItem()" class="checklistsBtn"> + Add Item</button>
-            <button type="button" class="checklistsBtn"> Save </button>
-            </center>
-
-            <div id="List-Item">
-              <div class="input-group">
-                <span class="input-group-addon">
-                  <input type="checkbox" aria-label="Checkbox for following text input">
-                </span>
-                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="col-3">
-          
+          <center>
           <button type="button" class="shareBtn"  onclick="document.getElementById('shareModal').style.display='block'"> Share </button>
+          </center>
           <br><br>
            <div id="shareModal" class="modal">
             <center>
@@ -92,6 +62,40 @@ function deleteAlert(){
                 </form>
             </center>
         </div>   
+        </div>
+
+        <div class="col-6">
+          <div class="container">
+
+             <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Enter a Title for your List Here">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon">Listlet Author</span>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+
+           
+
+            <center>
+            <button type="button" onclick="addListItem()" class="checklistsBtn"> + Add Item</button>
+            <button type="button" class="checklistsBtn"> Save </button>
+            </center>
+
+            <div id="List-Item">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+                </span>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-3">
           <button type="button" class="deleteBtn" onclick="deleteAlert()"> Delete </button>
         </div>
 

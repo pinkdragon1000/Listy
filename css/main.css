@@ -53,8 +53,17 @@
         color: #757575;
     }
     .registerAndLoginBtn:active {
-        background-color: #c7e274;
+        background-color: #c7e2746b;
     }
+
+
+    .registerAndLoginBtn:hover{
+        border: 3px dashed #c7e274;
+    }
+
+
+
+
 
     .registerAndLoginBtnPos{
         width: 90%;
