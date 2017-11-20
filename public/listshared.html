@@ -1,0 +1,78 @@
+<html>
+<head>
+      <meta charset="utf-8">
+
+      <title>Listy</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!--JQuery Mobile and JQuery imports-->
+          <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+          <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+          <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+        
+      <!--Custom Font-->
+      <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+
+      <!--Main CSS File-->
+      <link rel="stylesheet" href="../css/main.css">
+
+      <!-- Bootstrap CSS file (Used for the bootstrap grids)-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+  <script>
+  $(document).ready(function() {
+    $(".addAndSaveBtn").click(function() {
+      document.getElementById('List-Item').innerHTML += '<div class="input-group">\n<span class="input-group-addon">\n<input type="checkbox" aria-label="Checkbox for following text input">\n</span>\n<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">\n</div>';
+    })
+    $(".deleteBtn").click(function() {
+      if (window.confirm("Are you sure you want to delete this list?")) {
+        window.location = "yourchecklists.html";
+      }
+      else {
+
+      }
+  })
+  });
+  </script>
+</head>
+
+<body>
+  <div data-role="page" id="home" data-theme="d">
+    <!--Menu -->
+    <div data-role="panel" id="firstpanel" data-display="overlay" data-position-fixed="true">
+      <a href="main.html" data-role="button" data-icon="home" data-ajax="false">Home</a>
+      <a href="yourchecklists.html" data-role="button" data-icon="check" data-ajax="false">Your Checklists</a>
+      <a href="checklistsshared.html" data-role="button" data-icon="grid" data-ajax="false">Shared with Me</a>
+      <br><br>
+      <a href="#close" data-role="button" data-icon="delete" data-rel="close">Close</a>
+    </div>
+
+    <div data-role="header" data-position="fixed" data-theme="d" data-tap-toggle="false">
+      <a href="#firstpanel" id="menu" data-role="button" data-inline="true" data-icon="bars">Menu</a>
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="../images/listy.png" alt="Listy Icon" height="150px" width="237px">
+          </div>
+          
+          <div class="col-sm-6">
+            <center>
+              <input type="text" placeholder="Enter a Title for your List Here">
+              <p>Listlet Author: USERNAME </p>
+              <a type="button" data-role="button" class="addAndSaveBtn" data-ajax="false"> + Add Item</a>
+              <a type="button" data-role="button" class="addAndSaveBtn" data-ajax="false"> Save </a>
+            </center>
+          </div>
+        </div>
+    </div>
+  
+    <div data-role="content" class="ui-content">
+      <div id="List-Item" class="col-lg-6">
+      </div> 
+    </div>
+</div>
+
+</body>
+</html>

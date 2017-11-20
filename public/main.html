@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--JQuery Mobile and JQuery imports-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+        
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="../css/main.css">
+
+     <!-- Bootstrap CSS file (Used for the bootstrap grids)-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <title>Listy</title>
+  </head>
+
+<body>
+  <div data-role="page" id="home" data-theme="d">
+          <!--Menu -->
+        <div data-role="panel" id="firstpanel" data-display="overlay" data-position-fixed="true">
+            <a href="./main.html" data-role="button" data-icon="home" data-ajax="false">Home</a>
+
+            <a href="./yourchecklists.html" data-role="button" data-icon="check" data-ajax="false">Your Checklists</a>
+
+            <a href="./checklistsshared.html" data-role="button" data-icon="grid" data-ajax="false">Shared with Me</a>
+            <br>
+            <br>
+            <a href="#close" data-role="button" data-icon="delete" data-rel="close">Close</a>
+        </div>
+        
+        <div data-role="header" data-position="fixed" data-theme="d" data-tap-toggle="false">
+            <a href="#firstpanel" id="menu" data-role="button" data-icon="bars" class="menuBtn">Menu</a>
+            <br>
+        <center>
+        <p> Welcome Listlet User!</p>
+        </center>
+        </div>
+
+        <div data-role="content" class="ui-content">
+        
+  <center>
+    <br>
+    
+    <p>Navigate the menu in the upper left hand corner to
+    continue making your checklists and view checklists others shared with you!</p>
+    <br><br>
+    <img src="../images/listy.png" height="235px" width="376px">
+  </center>
+</body>
+</div>
+</html>

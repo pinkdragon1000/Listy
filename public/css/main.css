@@ -1,4 +1,3 @@
-/* common */
 
     ::-moz-selection{
         background: #c7e274;
@@ -12,8 +11,10 @@
             color: #757575;
     }
     p{
-        width: 350px;
+        width: 70%;
         font-size: 15px;
+        font-family: 'Armata', sans-serif !important;
+        color: #757575;
     }
     h2{
         color: #c7e274;
@@ -29,11 +30,14 @@
         font-size: 15px;
     }
 
+    table {
+        width: 80%;
+    }
+
         /* Full-width input fields */
     input[type=text], input[type=password] {
         width: 100%;
         padding: 12px 20px;
-        margin: 8px 0;
         display: inline-block;
         border: 1px solid #ccc;
         box-sizing: border-box;
@@ -42,7 +46,11 @@
         font-size: 15px;
     }
 
+
 /* index.html*/
+    .row{
+      padding-right: 10px;  
+    }
     .registerAndLoginBtn{
         height: 40px;
         width: 100px;
@@ -51,9 +59,10 @@
         -webkit-appearance: none;
         border: 3px solid #c7e274;
         color: #757575;
+        float: right;
     }
     .registerAndLoginBtn:active {
-        background-color: #c7e2746b;
+        background-color: rgba(199,226, 116, 0.6);
     }
 
 
@@ -61,29 +70,25 @@
         border: 3px dashed #c7e274;
     }
 
-
-
-
-
     .registerAndLoginBtnPos{
         width: 90%;
-        text-align: right;
+        float: right;
     }
 
     #registerDescr{
         font-size: 12px;
         width: 95%;
+        float: right;
         text-align: right;
-        padding-left: 110px;
     }
 
     .listy {
         width: 400px;
         height: 255px;
         position: relative;
-        -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+        -webkit-animation-name: listy; /* Safari 4.0 - 8.0 */
         -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-        animation-name: example;
+        animation-name: listy;
         animation-duration: 4s;
         animation-iteration-count: 3;
         -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
@@ -91,7 +96,7 @@
     }
 
     /* Safari 4.0 - 8.0 */
-    @-webkit-keyframes example {
+    @-webkit-keyframes listy {
         0%   {right:0px; bottom:0px;}
         25%  {right:200px; bottom:0px;}
         50%  {right:200px; bottom:150px;}
@@ -100,7 +105,7 @@
     }
 
     /* Standard syntax */
-    @keyframes example {
+    @keyframes listy {
         0%   {right:0px; bottom:0px;}
         25%  {right:200px; bottom:0px;}
         50%  {right:200px; bottom:150px;}
@@ -109,7 +114,7 @@
     }
 
     /*Login and Registration Modals*/
-    .container {
+    .containerModal {
         width: 300px;
     }
 
@@ -135,7 +140,7 @@
         }
 
     /* The Close Button (x) */
-    .close {
+    .closeModal {
         position: absolute;
         right: 25px;
         top: 0;
@@ -144,16 +149,16 @@
         font-weight: bold;
     }
 
-    .close:hover,
-    .close:focus {
+    .closeModal:hover,
+    .closeModal:focus {
         color: #B94A48;
         cursor: pointer;
     }
 
     /* Add Zoom Animation to Login and Registration Modals */
-    .animate {
+    .animate  {
         -webkit-animation: animatezoom 0.6s;
-        animation: animatezoom 0.6s
+        animation: animatezoom 0.6s;
     }
 
     @-webkit-keyframes animatezoom {
@@ -167,11 +172,6 @@
     }
 
 
-
-
-
-
-
 .checklistTitle{
     width: 50%;
     text-align: center;
@@ -180,14 +180,27 @@
 button:focus {
  outline:0;
 }
-button{
-    font-family: 'Armata', sans-serif !important;
-}
 
 /*main.html*/
-      div.container {
-    margin-top: 20px;
+.menuBtn{
+    height: 40px;
+        font-size: 12px;
+        background-color: #ffffff;
+        -webkit-appearance: none;
+        border: 3px solid #c7e274;
+        color: #757575;
+        border-radius:0px; 
 }
+.menuBtn:hover{
+        border: 3px dashed #c7e274;
+        text-decoration: none;
+
+    }
+
+    .menuBtn:active{
+        background-color: rgba(199,226, 116, 0.6);
+    }
+
 
        .checklistsBtn{
         height: 40px;
@@ -197,33 +210,132 @@ button{
         -webkit-appearance: none;
         border: 3px solid #c7e274;
         color: #757575;
+        border-radius:0px;
+        text-decoration: none;
     }
 
     .checklistsBtn:hover{
         border: 3px dashed #c7e274;
+        text-decoration: none;
     }
 
     .checklistsBtn:active{
-        background-color: #c7e2746b;
+         background-color: rgba(199,226, 116, 0.6);
     }
 
 
 /*yourchecklists.html, checklistsshared.html,*/
 
     .listButton{
-        width: 700px;
+       /* width: 700px;*/
+       width: 100%;
         height: 40px;
         font-size: 12px;
         background-color: #ffffff;
         -webkit-appearance: none;
         border: 1px solid #757575;
         color: #757575;
+        text-decoration: none;
     }
     .listButton:hover{
         border: 2px dashed #757575;
+        text-decoration: none;
     }
     .listButton:active{
-        background-color: #c7e2746b;
+        background-color: rgba(199,226, 116, 0.6);
+        text-decoration: none;
     }
     
+.ui-page .ui-header {
+    background: #ffffff !important;
+}
+.ui-btn-text{
+    font-size: 12px;
+    color: #757575;
+}
 
+.ui-btn{
+    text-decoration: none;
+       border-radius: 0px;
+       border: 3px solid #c7e274;
+       background-color:#fff;
+       background: #fff;
+       font-family: 'Armata', sans-serif !important;
+            
+}
+.ui-btn-active 
+{
+     color:#757575 !important; text-decoration: none; background: #d7e4ac !important; text-shadow: none;
+    
+}
+
+.ui-focus,
+.ui-btn:focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+
+}
+
+/*yourlist.html, listshared.html*/
+
+          .shareBtn{
+        height: 40px;
+        width: 50%;
+        font-size: 12px;
+        background-color: #ffffff;
+        -webkit-appearance: none;
+        border: 3px solid powderblue;
+        color: #757575;
+    }
+
+    .shareBtn:hover{
+        border: 3px dashed powderblue;
+    }
+
+    .shareBtn:active{
+        background-color: #b0e0e66b;
+    }
+
+    
+      .deleteBtn{
+        height: 40px;
+        width: 50%;
+        font-size: 12px;
+        background-color: #ffffff;
+        -webkit-appearance: none;
+        border: 3px solid #ce74647a;
+        color: #757575;
+    }
+
+    .deleteBtn:hover{
+        border: 3px dashed #ce74647a;
+    }
+
+    .deleteBtn:active{
+        background-color: #ce74643d;
+    }
+
+        .addAndSaveBtn{
+        height: 40px;
+        width: 50%;
+        font-size: 12px;
+        background-color: #ffffff;
+        -webkit-appearance: none;
+        border: 3px solid #c7e274;
+        color: #757575;
+        margin-right: 60px;
+    }
+
+    .addAndSaveBtn:hover{
+        border: 3px dashed #c7e274;
+    }
+
+    .addAndSaveBtnBtn:active{
+        background-color: #c7e2746b;
+    }
+
+    div.input-group {
+        margin-top: 15px;
+    }
