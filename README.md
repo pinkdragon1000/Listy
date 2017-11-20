@@ -1,6 +1,6 @@
 # Listy
 
-<p align="center"><img src="images/listy.png" width="376px" height="235px"/></p>
+<p align="center"><img src="public/images/listy.png" width="376px" height="235px"/></p>
 
 To view board: Add the Zenhub extension to Chrome
 <br>
