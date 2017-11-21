@@ -82,8 +82,10 @@
         text-align: right;
     }
 
+    @media screen and (min-width : 768px) {
+
     .listy {
-        width: 400px;
+        width: 30%;
         height: 255px;
         position: relative;
         -webkit-animation-name: listy; /* Safari 4.0 - 8.0 */
@@ -111,6 +113,7 @@
         50%  {right:200px; bottom:150px;}
         75%  {right:0px; bottom:150px;}
         100% {right:0px; bottom:0px;}
+    }
     }
 
     /*Login and Registration Modals*/
