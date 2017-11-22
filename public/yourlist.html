@@ -19,10 +19,10 @@
 
     <script>
     $(document).ready(function() {
-        $(".addAndSaveBtn").click(function(){
+        $("#addBtn").click(function(){
         document.getElementById('List-Item').innerHTML += '<div class="input-group">\n<span class="input-group-addon">\n<input type="checkbox" aria-label="Checkbox for following text input">\n</span>\n<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">\n</div>';
         })
-        $(".deleteBtn").click(function(){
+        $("#deleteBtn").click(function(){
             if (window.confirm("Are you sure you want to delete this list?")){
                 window.location = "yourchecklists.html";
         }
@@ -66,14 +66,14 @@
             
                     <div class="row">
                         <center>
-                            <a type="button" data-role="button" class="addAndSaveBtn" data-ajax="false"> + Add Item</a>
-                            <a type="button" data-role="button" class="addAndSaveBtn" data-ajax="false"> Save </a>
+                            <a type="button" data-role="button" class="addAndSaveBtn" id="addBtn" data-ajax="false"> + Add Item</a>
+                            <a type="button" data-role="button" class="addAndSaveBtn" id="saveBtn" data-ajax="false"> Save </a>
                         </center>
                     </div>
                 </div>
           
                 <div class="col-sm-3">
-                    <a type="button" class="deleteBtn" data-role="button"> Delete </a>
+                    <a type="button" class="deleteBtn" id="deleteBtn" data-role="button"> Delete </a>
                 </div>
             </div>
         </div>
