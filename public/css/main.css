@@ -351,8 +351,8 @@ button:focus {
         text-decoration: none;
     }
 
-    .addAndSaveBtnBtn:active{
-        background-color: #c7e2746b;
+    .addAndSaveBtn:active{
+        background-color: rgba(199,226, 116, 0.6);
         text-decoration: none;
     }
 
