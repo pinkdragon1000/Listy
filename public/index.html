@@ -19,6 +19,56 @@
 
 
 <title>Listy</title>
+
+<script>
+	
+function login(enter,username,password,output,eml)
+{	
+	var user = document.getElementById(username);
+	var pass = document.getElementById(password);
+	var email = document.getElementById(eml);
+	var out = document.getElementById(output);
+	var urlrequest = "http://localhost:8080/" + enter;
+	
+	if ((enter == "login" && user.value == "" || pass.value == "") || (enter == "register" && email.value == "" || pass.value == "" || user.value == ""))
+	{
+		user.value = "";
+		pass.value = "";
+		email.value = "";
+		out.innerHTML = "Please input into all fields!";
+	}
+	else
+	{	
+		$.ajax
+		({
+			type: "POST",
+			url: urlrequest,
+			dataType: "HTML",   
+			data: JSON.stringify({us: user.value, ps: pass.value, em: email.value}),
+			contentType:"application/json",
+			success : function(ans)  //the response
+			{	
+				if (ans != 'logged' && ans != 'register')
+				{
+					out.innerHTML = ans;
+				}
+				else
+				{
+					user.value = "";
+					pass.value = "";
+					email.value = "";
+					location.href="http://localhost:8080/main.html";
+				}
+			},
+			//Just in case the connection fails for some reason.
+			error: function(jgXHR, textStatus,errorThrown)
+			{
+				alert("Error: " + textStatus + " " + errorThrown);
+			}
+		});
+	}
+}
+</script>
 </head>
 
 <body>
@@ -47,16 +97,17 @@
                         <hr>
                         <div>
                             <label for="email">Username: </label>
-                            <input type="text" id="username" required>
+                            <input type="text" id="username">
                         </div>
 
                         <div>
                             <label for="password">Password: </label>
-                            <input type="password" id="password" required>
+                            <input type="password" id="password">
                         </div>
 
                         <br><br>
-                        <button type="submit" class="registerAndLoginBtn" style="float: none">Login</button>
+                        <p id="loginp"></p>
+                        <button onclick="login('login','username','password','loginp','email')" type="submit" class="registerAndLoginBtn">Login</button>
                     </div>
 
                 </form>
@@ -76,20 +127,20 @@
                         <hr>
                           <div>
                             <label for="username">Username: </label>
-                            <input type="text" id="username" required>
+                            <input type="text" id="regusername">
                         </div>
                         <div>
                             <label for="email">Email: </label>
-                            <input type="text" id="email" required>
+                            <input type="text" id="email">
                         </div>
 
                         <div>
                             <label for="password">Password: </label>
-                            <input type="password" id="password" required>
+                            <input type="password" id="regpassword">
                              <br><br>
                         </div>
-                    
-                        <button type="submit" class="registerAndLoginBtn" style="float: none">Register</button>
+                        <p id="registerp"></p>
+						<button  class="registerAndLoginBtn" onclick="login('register','regusername','regpassword','registerp','email')">Register</button>
                     </div>
                 </form>
             </center>
