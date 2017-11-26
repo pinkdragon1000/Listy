@@ -6,7 +6,10 @@ var page = require('fs');
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-app.use(express.static("."));
+
+app.use(express.static('public'))
+app.use('/static', express.static('public'))
+
 //The mysql we include to connect to database
 var mysql = require('mysql');
 var con = mysql.createConnection
@@ -29,8 +32,7 @@ app.use(session(
 var ac = require('./account');
 var lg = new ac();
 
-app.use(express.static('public'))
-app.use('/static', express.static('public'))
+
 
 //Post a new user in the users data table
 app.post('/register', function(req,res)
