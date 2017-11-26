@@ -231,6 +231,10 @@ button:focus {
          background-color: rgba(199,226, 116, 0.6);
     }
 
+    .space{
+        padding-top: 60%;
+    }
+
 
 /*yourchecklists.html, checklistsshared.html,*/
 
