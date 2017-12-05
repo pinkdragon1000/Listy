@@ -8,7 +8,7 @@ var con = mysql.createConnection
 ({
 	host: 'localhost',
 	user: 'root',
-	password: 'destiny2161',
+	password: 'destiny2161', //read in the password from a file
 	database: 'listy'
 });
 
@@ -16,8 +16,8 @@ con.connect(function(err)
 {
 	if (err) 
 	{
-		console.log(err);
 		console.log('Error connecting to database');
+		console.log(err);
 	}
 });
 
@@ -42,11 +42,11 @@ account.prototype.login=function(username,password)
 		{
 			if(rows.length > 0)
 			{
-				self.emit('loggedin',1);
+				self.emit('loggedin','logged');
 			}
 			else
 			{
-				self.emit('loggedin',0);
+				self.emit('loggedin','Incorrect username or password.');
 			}
 		}
 	}
@@ -56,22 +56,17 @@ account.prototype.login=function(username,password)
 account.prototype.register=function(username,password,email)
 {
 	var self = this;
-	
-	console.log(username);
-	console.log(password);
-	console.log(email);
-	
+		
 	con.query('INSERT INTO users (username, password, email) VALUES (\''+username+'\', PASSWORD(\''+password+'\'), \''+email+'\')',
 	function(err)
 	{
 		if(err)
 		{
-			console.log('user exists already');
-			self.emit('reg',0);
+			self.emit('share','User already exists!');
 		}
 		else
 		{
-			self.emit('reg',1);
+			self.emit('share','makeuser');
 		}
 	}
 	);
@@ -79,14 +74,38 @@ account.prototype.register=function(username,password,email)
 
 account.prototype.createUser=function(username)
 {
-	console.log(username);
+	console.log('new user table');
 	
-	con.query('CREATE TABLE '+username+'Table (lname VARCHAR(100), ltext VARCHAR(5000), shared VARCHAR(1000))',
+	var self = this;
+	
+	con.query('CREATE TABLE '+username+'Table (lid VARCHAR(100) UNIQUE, lname VARCHAR(100) UNIQUE, ltext VARCHAR(5000), shared VARCHAR(1000))',
 	function(err)
 	{
 		if(err)
 		{
-			console.log('Datatable not created :(');
+			self.emit('reg','User already exists!');
+		}
+		else
+		{
+			self.emit('reg','register');
+		}
+	}
+	);
+};
+
+account.prototype.makeShareRow=function(username)
+{
+	console.log('Put into usershared table for shared lists');
+	
+	var self = this;
+	var place = "<%>";
+	
+	con.query('INSERT INTO userShared (username,sharedfrom,listids,listnames) VALUES (\''+username+'\',\''+place+'\',\''+place+'\',\''+place+'\')',
+	function(err)
+	{
+		if(err)
+		{
+			console.log('User cant share :(');
 		}
 	}
 	);

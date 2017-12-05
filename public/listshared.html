@@ -22,13 +22,7 @@
 
 
 
-  <script>
-  $(document).ready(function() {
-    $("#addBtn").click(function() {
-      document.getElementById('List-Item').innerHTML += '<div class="input-group">\n<span class="input-group-addon">\n<input type="checkbox" aria-label="Checkbox for following text input">\n</span>\n<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="List Item">\n</div>';
-    })
-  });
-  </script>
+  <script src="js/listshared.js"></script>
 </head>
 
 <body>
@@ -41,7 +35,7 @@
       <br><br>
       <a href="#close" data-role="button" data-icon="delete" data-rel="close">Close</a>
       <div class="space">
-        <a href="index.html" data-role="button" data-ajax="false">Logout</a>
+        <a href="#" onclick="logout(); return false;" data-role="button" data-ajax="false">Logout</a>
       </div>
     </div>
 
@@ -54,10 +48,10 @@
           
           <div class="col-sm-6">
             <center>
-              <input type="text" placeholder="Enter a Title for your List Here">
-              <p>Listlet Author: USERNAME </p>
-              <a type="button" data-role="button" class="addAndSaveBtn" id="addBtn" data-ajax="false"> + Add Item</a>
-              <a type="button" data-role="button" class="addAndSaveBtn" id="saveBtn" data-ajax="false"> Save </a>
+              <input class="title" type="text" placeholder="Title can be changed only by author" readonly>
+              <p id="usern">Listlet Author: USERNAME </p>
+              <a href="#" onclick="addItem(); return false;" type="button" data-role="button" class="addAndSaveBtn" id="addBtn" data-ajax="false"> + Add Item</a>
+              <a href="#" onclick="saveList(); return false;" type="button" data-role="button" class="addAndSaveBtn" id="saveBtn" data-ajax="false"> Save </a>
             </center>
           </div>
         </div>

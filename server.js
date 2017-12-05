@@ -1,14 +1,12 @@
 //All the includes we need to make stuff happen
-var http = require('http');
 var express = require('express');
 var app = express();
-var page = require('fs');
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-app.use(express.static('public'))
-app.use('/static', express.static('public'))
+app.use(express.static('public'));
+app.use('/static', express.static('public'));
 
 //The mysql we include to connect to database
 var mysql = require('mysql');
@@ -16,71 +14,190 @@ var con = mysql.createConnection
 ({
 	host: 'localhost',
 	user: 'root',
-	password: 'destiny2161',
+	password: 'destiny2161', //read in the password from a file
 	database: 'listy'
 });
-/*
-var session = require('client-sessions');
-app.use(session(
-{
-	cookieName: 'session',
-	secret: 'sesdeswedkrbee', 
-	duration: 30 * 60 * 1000,
-	activeDuration: 5 * 60 * 1000,
-}));
-*/
+
 var ac = require('./account');
-var lg = new ac();
+var account = new ac();
+var ls = require('./list');
+var list = new ls();
+var sh = require('./share');
+var share = new sh();
 
-
+//login and registration
 
 //Post a new user in the users data table
 app.post('/register', function(req,res)
 {	
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	
-	lg.once('reg', function(msg)
-	{
-		var resp = "";
-		
-		if(msg == 1)
+	account.once('reg', function(response)
+	{	
+		account.makeShareRow(req.body.user);
+		res.end(response);
+	});
+	
+	account.once('share', function(response)
+	{	
+		if(response == "makeuser")
 		{
 			//create list datatable for that user
-			lg.createUser(req.body.us);
-			resp = "register";
+			account.createUser(req.body.user);
 		}
 		else
 		{
-			resp = "User already exists!";
+			res.end(response);
 		}
-		res.end(resp);
 	});
 		
-	lg.register(req.body.us, req.body.ps, req.body.em);
+	account.register(req.body.user, req.body.passwrd, req.body.email);
 });
+
 //post request to login.
 app.post('/login', function (req, res)
 {
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	
-	lg.once('loggedin', function(msg)
+	account.once('loggedin', function(response)
 	{
-		var resp = "";
+		res.end(response);
+	});
+	
+	account.login(req.body.user, req.body.passwrd);
+});
+
+//personal lists
+
+//Post a new list in a users list datatable
+app.post('/save', function(req,res)
+{	
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	
+	list.once('save', function(response)
+	{
+		res.end(response);
+	});
 		
-		if(msg == 1)
+	list.savelist(req.body.user, req.body.lsTitle, req.body.list);
+});
+
+//update a list in the user data table
+app.post('/update', function(req,res)
+{	
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	
+	list.once('update', function(response)
+	{
+		res.end(response);
+	});
+
+	list.updatelist(req.body.user, req.body.lsTitle, req.body.list, req.body.lsId, req.body.oldTitle);
+});
+
+//Delete a users list from their datatable
+app.post('/delete', function(req,res)
+{	
+	res.writeHead(200, {'Content-Type': 'text/html'});	
+	
+	list.once('delete', function(response)
+	{
+		res.end(response);
+	});
+	
+	list.deletelist(req.body.user, req.body.lsTitle, req.body.lsId);
+});
+
+//Get lists from users list datatable
+app.get('/getlists', function(req,res)
+{	
+	list.once('got', function(lists)
+	{
+		res.send(lists);
+	});
+	
+	list.getlists(req.query.user);
+});
+
+//Get list items from users list datatable
+app.get('/getitems', function(req,res)
+{	
+	list.once('goti', function(lItems) 
+	{
+		var list = "";
+		var id = "";
+		var lItemsSplit = lItems.split("><$><");
+		
+		if(lItems == "fail")
 		{
-			//req.session.userid = req.query.us;
-			resp = "logged";
+			list = "Error getting list items";
+			id = "";
 		}
 		else
 		{
-			//req.session.msg = 'Login failed';
-			resp = "Incorrect username or password.";
+			list = lItemsSplit[0];
+			id = lItemsSplit[1];
 		}
-		res.end(resp);
+		
+		res.send(JSON.stringify({itemlist: list, listid: id}));
 	});
 	
-	lg.login(req.body.us, req.body.ps);
+	list.getlistitems(req.query.user,req.query.listname);
+});
+
+//sharing 
+
+//share list with another user
+app.post('/share', function(req,res)
+{	
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	
+	share.once('shared', function(response)
+	{	
+		res.end(response);
+	});
+	share.ShareLs(req.body.userShared,req.body.userSharing,req.body.lsName,req.body.lsId);
+});
+//get lists shared with a user
+app.get('/sharedLists', function(req,res)
+{	
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	
+	share.once('gotSharedLists', function(response)
+	{	
+		console.log(response);
+		res.end(response);
+	});
+	share.getShareLists(req.query.userShared);
+});
+//Get shared list items from users list datatable
+app.get('/getSharedItems', function(req,res)
+{	
+	share.once('gotSharedItems', function(lItems) 
+	{
+		console.log(lItems);
+		if(lItems == "fail")
+		{
+			lItems = "Error getting list items";
+		}
+		res.send(lItems);
+	});
+	
+	console.log(req.query.userShared);
+	console.log(req.query.listid);
+	
+	share.getSharedItems(req.query.userShared,req.query.listid);
+});
+//update a shared list
+app.post('/updateSharedList', function(req,res)
+{	
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	
+	share.once('updateShared', function(response)
+	{
+		res.end(response);
+	});
+	share.updateSharedList(req.body.userShared, req.body.lsTitle, req.body.list, req.body.lsId);
 });
 //listen for localhost 8080
 app.listen(8080, function()

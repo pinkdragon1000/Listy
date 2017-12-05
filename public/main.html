@@ -19,6 +19,7 @@
 
 
     <title>Listy</title>
+	
   </head>
 
 <body>
@@ -34,7 +35,7 @@
             <br>
             <a href="#close" data-role="button" data-icon="delete" data-rel="close">Close</a>
             <div class="space">
-              <a href="index.html" data-role="button" data-ajax="false">Logout</a>
+              <a href="#" onclick="logout(); return false;" data-role="button" data-ajax="false">Logout</a>
             </div>
         </div>
         
@@ -42,7 +43,7 @@
             <a href="#firstpanel" id="menu" data-role="button" data-icon="bars" class="menuBtn">Menu</a>
             <br>
         <center>
-        <p> Welcome Listlet User!</p>
+        <p id="wuser">fail</p>
         </center>
         </div>
 
@@ -58,4 +59,5 @@
   </center>
 </body>
 </div>
+<script src="js/main.js"></script>
 </html>
