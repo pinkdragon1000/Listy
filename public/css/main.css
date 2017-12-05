@@ -85,7 +85,7 @@
         text-align: right;
     }
 
-    @media screen and (min-width : 686px) {
+    @media screen and (min-width : 768px) {
 
     .listy {
         width: 30%;
@@ -118,14 +118,13 @@
         100% {right:0px; bottom:0px;}
     }
     }
-@media screen and (min-width : 686px) {
+
     /*Login and Registration Modals*/
     .containerModal {
-        width: 90%;
+        width: 300px;
     }
- 
-}
-  /* The Modal (background) */
+
+    /* The Modal (background) */
     .modal {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
@@ -138,11 +137,12 @@
         padding-top: 60px;
         background-color: rgba( 0, 0, 0, 0.8 );
     }
-/* Modal Content/Box */
+
+    /* Modal Content/Box */
         .modalContent {
         border: 1px solid #888;
-        width: 50%;
-        height: 90%;
+        width: 600px;
+        height: 500px;
         }
 
     /* The Close Button (x) */
@@ -160,7 +160,8 @@
         color: #B94A48;
         cursor: pointer;
     }
-      /* Add Zoom Animation to Login and Registration Modals */
+
+    /* Add Zoom Animation to Login and Registration Modals */
     .animate  {
         -webkit-animation: animatezoom 0.6s;
         animation: animatezoom 0.6s;
@@ -175,6 +176,7 @@
         from {transform: scale(0)} 
         to {transform: scale(1)}
     }
+
 
 .checklistTitle{
     width: 50%;

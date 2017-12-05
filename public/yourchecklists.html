@@ -18,17 +18,7 @@
 
     <title>Listy</title>
 
-    <script>
-        $(document).ready(function() {
-            var numLists=1;
-             document.getElementById("output").innerHTML+='<table data-role="table" data-mode="reflow" class="ui-responsive"><tbody id="toutput">';
-            $(".checklistsBtn").click(function(){
-                document.getElementById("toutput").innerHTML+="<tr><td><a href='yourlist.html' data-ajax='false'><button type='button' class='listButton'> List " + numLists+ "</button></a></td></tr>";
-                numLists++;
-        });
-        document.getElementById("output").innerHTML+="</tbody></table>"
-        });
-    </script>
+    <script src="js/yourchecklists.js"></script>
 </head>
 
 <body>
@@ -44,7 +34,7 @@
             <br>
             <a href="#close" data-role="button" data-icon="delete" data-rel="close">Close</a>
             <div class="space">
-                <a href="index.html" data-role="button" data-ajax="false">Logout</a>
+                <a href="#" onclick="logout(); return false;" data-role="button" data-ajax="false">Logout</a>
             </div>
         </div>
 
@@ -65,7 +55,7 @@
                         </div>
 
                         <div class="col-sm-3">
-                            <a href="#" class="checklistsBtn" id="addList" data-role="button" data-theme="d">+ Add List</a>
+                            <a href="#" onclick="addlist('add'); return false;" class="checklistsBtn" id="addList" data-role="button" data-theme="d">+ Add List</a>
                         </div>
 
                     </div>
