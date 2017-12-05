@@ -85,7 +85,7 @@
         text-align: right;
     }
 
-    @media screen and (min-width : 768px) {
+    @media screen and (min-width : 686px) {
 
     .listy {
         width: 30%;
@@ -118,11 +118,12 @@
         100% {right:0px; bottom:0px;}
     }
     }
-
+@media screen and (min-width : 686px) {
     /*Login and Registration Modals*/
     .containerModal {
-        width: 300px;
+        width: 90%;
     }
+}
 
     /* The Modal (background) */
     .modal {
@@ -141,8 +142,8 @@
     /* Modal Content/Box */
         .modalContent {
         border: 1px solid #888;
-        width: 600px;
-        height: 500px;
+        width: 50%;
+        height: 90%;
         }
 
     /* The Close Button (x) */
