@@ -4,11 +4,32 @@ var utils = require('util');
 var page = require('fs');
 //The mysql we include to connect to databases
 var mysql = require('mysql');
+
+//Miguel's MySQL Connection
+/*
 var con = mysql.createConnection
 ({
 	host: 'localhost',
 	user: 'root',
 	password: 'destiny2161', //read in the password from a file
+	database: 'listy'
+});
+
+con.connect(function(err) 
+{
+	if (err) 
+	{
+		console.log('Error connecting to database');
+		console.log(err);
+	}
+});
+*/
+//Sita's MySQL Connection
+var con = mysql.createConnection
+({
+	host: 'localhost',
+	user: 'dbuser',
+	password: 'dbpassword',
 	database: 'listy'
 });
 

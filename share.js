@@ -4,6 +4,9 @@ var utils = require('util');
 var page = require('fs');
 //The mysql we include to connect to databases
 var mysql = require('mysql');
+
+//Miguel's MySQL Connection
+/*
 var con = mysql.createConnection
 ({
 	host: 'localhost',
@@ -20,7 +23,25 @@ con.connect(function(err)
 		console.log('Error connecting to database');
 	}
 });
+*/
 
+//Sita's MySQL Connection
+var con = mysql.createConnection
+({
+	host: 'localhost',
+	user: 'dbuser',
+	password: 'dbpassword',
+	database: 'listy'
+});
+
+con.connect(function(err) 
+{
+	if (err) 
+	{
+		console.log('Error connecting to database');
+		console.log(err);
+	}
+});
 function share()
 {
 	EventEmitter.call(this);

@@ -10,11 +10,22 @@ app.use('/static', express.static('public'));
 
 //The mysql we include to connect to database
 var mysql = require('mysql');
+//Miguel's MySQL Connection
+/*
 var con = mysql.createConnection
 ({
 	host: 'localhost',
 	user: 'root',
 	password: 'destiny2161', //read in the password from a file
+	database: 'listy'
+});
+*/
+//Sita's MySQL Connection
+var con = mysql.createConnection
+({
+	host: 'localhost',
+	user: 'dbuser',
+	password: 'dbpassword',
 	database: 'listy'
 });
 
