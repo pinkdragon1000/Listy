@@ -55,6 +55,7 @@
 			//make the correct author name show up
 			var urlrequest = "http://localhost:8080/getitems";
 			var outputList = document.getElementById('List-Item');	
+			var alshared = document.getElementById('alreadyShared');
 			var listTitle = document.getElementsByClassName('title');
 			var listChecks = document.getElementsByClassName('check-control');
 		
@@ -72,7 +73,12 @@
 					items = JSON.parse(items);
 					outputList.innerHTML = items.itemlist;
 					listTitle[0].id = items.listid;
+					alshared.innerHTML = "Users already shared with:\n";
 					
+					if (items.alshared != "undefined")
+					{
+						alshared.innerHTML += items.alshared;
+					}
 					for (var i = 0; i < listChecks.length; i++)
 					{
 						if (listChecks[i].value == "true")
@@ -170,6 +176,7 @@
 	{
 		var listTitle = document.getElementsByClassName('title');
 		var sharie = document.getElementById('username');
+		var alshared = document.getElementById('alreadyShared');
 	
 		if (listTitle[0].value == "")
 		{
@@ -195,6 +202,10 @@
 				contentType:"application/json",
 				success : function(response)  //the response
 				{		
+					if (response == '< Successfully Shared! >')
+					{
+						alshared.innerHTML += " " + sharie.value;
+					}
 					sharie.value = response;
 					setTimeout(function()
 					{ 

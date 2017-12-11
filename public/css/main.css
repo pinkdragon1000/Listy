@@ -1,3 +1,21 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @map455
+ Sign out
+ Watch 1
+  Unstar 1  Fork 0 sitarobinson/Listy
+ Code  Issues 5  Pull requests 0  Projects 0  Wiki  Insights
+Tree: b915e2ebfb Find file Copy pathListy/public/css/main.css
+b915e2e  5 days ago
+@sitarobinson sitarobinson changes making modal resize for mobile, fixing login/registration err…
+2 contributors @sitarobinson @map455
+RawBlameHistory      
+366 lines (310 sloc)  7.93 KB
 
     ::-moz-selection{
         background: #c7e274;
@@ -364,3 +382,4 @@ button:focus {
     div.input-group {
         margin-top: 15px;
     }
+	
