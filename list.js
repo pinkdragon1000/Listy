@@ -177,7 +177,9 @@ list.prototype.updatelist=function(username,title,list,id,oldtitle)
 list.prototype.deletelist=function(username,title,id)
 {
 	var self = this;
-	
+				
+	deleteSharedList(username,title,id);
+
 	con.query('DELETE FROM '+username+'Table WHERE lname=\''+title+'\'',
 	function(err)
 	{
@@ -188,7 +190,6 @@ list.prototype.deletelist=function(username,title,id)
 		}
 		else
 		{
-			deleteSharedList(username,title,id);
 			self.emit('delete','success');
 		}
 	}
@@ -225,8 +226,9 @@ list.prototype.getlistitems=function(username,listname)
 {
 	var self = this;
 	var items = "";
+	var shared = "";
 	
-	con.query('SELECT lid, ltext FROM '+username+'Table WHERE lname = \''+listname+'\'',
+	con.query('SELECT lid, ltext, shared FROM '+username+'Table WHERE lname = \''+listname+'\'',
 	function(err,rows)
 	{
 		if(err)
@@ -244,6 +246,24 @@ list.prototype.getlistitems=function(username,listname)
 			}		
 			items += "><$><";
 			items += rows[0].lid;
+			
+			var listshared = rows[0].shared.split("<%>");
+			
+			for (var i2 = 1; i2 < listshared.length; i2++)
+			{
+				shared += listshared[i2];
+				
+				if (i2%3 == 0)
+				{
+					shared += "<br>";
+				}
+				else
+				{
+					shared += "  ";
+				}
+			}
+			items += "><$><";
+			items += shared;
 			
 			self.emit('goti',items);
 		}

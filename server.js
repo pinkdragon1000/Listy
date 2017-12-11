@@ -124,6 +124,7 @@ app.get('/getitems', function(req,res)
 {	
 	list.once('goti', function(lItems) 
 	{
+		console.log(lItems);
 		var list = "";
 		var id = "";
 		var lItemsSplit = lItems.split("><$><");
@@ -137,9 +138,10 @@ app.get('/getitems', function(req,res)
 		{
 			list = lItemsSplit[0];
 			id = lItemsSplit[1];
+			shared = lItemsSplit[2];
 		}
 		
-		res.send(JSON.stringify({itemlist: list, listid: id}));
+		res.send(JSON.stringify({itemlist: list, listid: id, alshared: shared}));
 	});
 	
 	list.getlistitems(req.query.user,req.query.listname);
