@@ -2,10 +2,19 @@
 
 <p align="center"><img src="public/images/listy.png" width="376px" height="235px"/></p>
 
-To view board: Add the Zenhub extension to Chrome
-<br>
-https://chrome.google.com/webstore/detail/zenhub-for-github/ogcgkffhplmphkaahpmffcafajaocjbd?hl=en-US
+<hr>
 
-Gantt Chart
-<br>
-https://prod.teamgantt.com/gantt/schedule/?ids=961077#&user=&date_filter=&ids=961077&custom=&company=&hide_completed=false&color_filter=
+## What is Listy?
+* Listy is a web app that allows people to make their own checklists and share it with any other member (Listlet) of Listy if they choose.
+
+
+## Possible uses: 
+
+* Grocery List
+* Homework List
+* Dorm List
+
+## Target Audience:
+* Families
+* Students
+* Coworkers
