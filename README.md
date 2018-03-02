@@ -18,3 +18,10 @@
 * Families
 * Students
 * Coworkers
+
+## Manual
+https://github.com/sitarobinson/Listy/blob/master/Listy%20Final%20Status%20Report.pdf
+
+## Poster
+https://github.com/sitarobinson/Listy/blob/master/Listy%20Poster.pdf
+
